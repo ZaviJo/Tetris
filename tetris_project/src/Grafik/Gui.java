@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 
 public class Gui {
 	public static int breite	= 480;							//Höhe des Fensters
-	public static int hoehe		= 820;							//Breite des Fensters
+	public static int hoehe		= 804;							//Breite des Fensters
 	JFrame frame;
 	
 	public void Fenster () {
