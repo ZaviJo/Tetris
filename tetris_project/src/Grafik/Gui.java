@@ -3,13 +3,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Gui {
-	public static int breite	= 480;							//Höhe des Fensters
-	public static int hoehe		= 804;							//Breite des Fensters
+	public static int breite	= 797;							//Höhe des Fensters
+	public static int hoehe		= 904;							//Breite des Fensters
 	JFrame frame;
 	
 	public void Fenster () {
 		frame = new JFrame("Tetris");							//Name oben im Fenster¨
-		frame.setSize(breite + 300, hoehe + 100);				//300 oder 100 für Fenster Raum für Highscore
+		frame.setSize(breite, hoehe);				//300 oder 100 für Fenster Raum für Highscore
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//X für Fenster dass es sich schliessen lässt
 		//frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
