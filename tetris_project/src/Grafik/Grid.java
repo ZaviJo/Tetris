@@ -1,4 +1,4 @@
-package grafik;
+package Grafik;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JLabel;
