@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 
 public class Gui {
 	public static int breite	= 797;							//Breite: 497 Spielfeld, 300 extra
-	public static int hoehe		= 904;							//Hoehe: 904 Spielfeld
+	public static int hoehe		= 904;							//Hoehe: 904 Spielfeld, davon 39 für Balken
 	JFrame frame;
 	
 	public void Fenster () {
