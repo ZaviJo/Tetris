@@ -5,8 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Gui {
-	public static int breite	= 797;							//Breite: 497 Spielfeld, 300 extra
-	public static int hoehe		= 904;							//Hoehe: 904 Spielfeld, davon 39 für Balken
+	public static int breite	= 797;							//Breite: 497 Pixel Spielfeld, 300 Pixel extra
+	public static int hoehe		= 904;							//Hoehe: 865 Pixel Spielfeld, 39 Pixel für den oberen Balken
 	JFrame frame;
 	
 	public void Fenster () {
