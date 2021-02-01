@@ -1,6 +1,6 @@
 package Main;
 
-import Grafik.Gui;
+import grafik.Gui;
 
 public class MainKlasse {
 
