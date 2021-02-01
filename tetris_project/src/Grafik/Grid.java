@@ -8,8 +8,7 @@ public class Grid extends JLabel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
-		g.setColor(new Color(222,0,222));					//RGB Werte
-		//g.setColor(Color.black);							//Grid Farbe
+		g.setColor(Color.white);						//RGB Werte
 		
 		for (int i = 0; i < 10; i++) {						//10 Felder in Breite
 			for (int j = 0; j < 18; j++) {					//18 Felder in die Höhe

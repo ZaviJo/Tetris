@@ -1,4 +1,6 @@
 package Grafik;
+import java.awt.Color;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -9,12 +11,12 @@ public class Gui {
 	
 	public void Fenster () {
 		frame = new JFrame("Tetris");							//Name oben im Fenster¨
-		frame.setSize(breite, hoehe);				//300 oder 100 für Fenster Raum für Highscore
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//X für Fenster dass es sich schliessen lässt
-		//frame.setLocationRelativeTo(null);
+		
+		frame.getContentPane().setBackground(Color.black);
+		
+		frame.setSize(breite, hoehe);				//300 oder 100 für Fenster Raum für Highscore
 		frame.setResizable(false);
-		//frame.setLayout(null);
-		//frame.requestFocus();
 		frame.setVisible(true);									//Fenster ausgeben
 		
 		Grid dg = new Grid();									//dg -- drawgrid
