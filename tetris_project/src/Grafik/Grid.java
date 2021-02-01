@@ -12,8 +12,8 @@ public class Grid extends JLabel {
 		//g.setColor(Color.black);							//Grid Farbe
 		
 		for (int i = 0; i < 10; i++) {						//10 Felder in Breite
-			for (int j = 0; j < 18; j++) {					//18 Felder in die Höhe
-				g.drawRect(i*48, j*48, 48, 48);				//48 Länge
+			for (int j = 0; j < 18; j++) {					//18 Felder in die HÃ¶he
+				g.drawRect(i*48, j*48, 48, 48);				//48 LÃ¤nge
 			}
 		}
 		
