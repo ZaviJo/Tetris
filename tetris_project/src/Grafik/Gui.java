@@ -15,7 +15,7 @@ public class Gui {
 		
 		frame.getContentPane().setBackground(Color.black);
 		
-		frame.setSize(breite, hoehe);				//300 oder 100 für Fenster Raum für Highscore
+		frame.setSize(breite, hoehe);				
 		frame.setResizable(false);
 		frame.setVisible(true);									//Fenster ausgeben
 		
