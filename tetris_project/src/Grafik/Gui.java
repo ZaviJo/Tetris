@@ -4,6 +4,8 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import Steuerung.keyhandler;
+
 public class Gui {
 	public static int breite	= 797;							//Breite: 497 Pixel Spielfeld, 300 Pixel extra
 	public static int hoehe		= 904;							//Hoehe: 865 Pixel Spielfeld, 39 Pixel für den oberen Balken
@@ -14,10 +16,10 @@ public class Gui {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//X für Fenster dass es sich schliessen lässt
 		
 		frame.getContentPane().setBackground(Color.black);		//Fenster wird schwarz gefärbt
-		
 		frame.setSize(breite, hoehe);				
 		frame.setResizable(false);
 		frame.setVisible(true);									//Fenster ausgeben
+		frame.addKeyListener(new keyhandler());
 		
 		Grid dg = new Grid();									//dg -- drawgrid
 		setupDraw(dg,0,0,breite,hoehe);							//0,0 sind x,y Werte
