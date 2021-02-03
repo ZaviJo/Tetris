@@ -29,10 +29,11 @@ public class Gui {
 		frame.setVisible(true);									//Fenster ausgeben
 		frame.addKeyListener(new keyhandler());
 		
+		kleinesGrid kg = new kleinesGrid();
+		setupDraw(kg,534, 0, breite, hoehe);
 		Grid dg = new Grid();									//dg -- drawgrid
 		setupDraw(dg,0,0,breite,hoehe);							//0,0 sind x,y Werte
-		kleinesGrid kg = new kleinesGrid();
-		setupDraw(kg, 534, 0, breite, hoehe);
+		
 	}
 	
 	private void setupDraw(JLabel draw, int x, int y, int breite, int hoehe) {
