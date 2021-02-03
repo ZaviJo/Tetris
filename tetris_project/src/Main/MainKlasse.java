@@ -15,7 +15,7 @@ package Main;
 
 import Grafik.*; 
 /* Die Klassen aus dem Package Grafik werden importiert. Das Package Grafik wird benötigt, um alle grafischen Teile von Tetris zu importieren. Das sind das Spielfeld,
- * die bewegenden Blöcke, 
+ * die bewegenden Blöcke und die Anzeige für den nächsten Block.
  */
 
 public class MainKlasse {
