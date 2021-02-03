@@ -13,19 +13,21 @@ public class Gui {
 		frame = new JFrame("Tetris");							//Name oben im Fenster¨
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//X für Fenster dass es sich schliessen lässt
 		
-		frame.getContentPane().setBackground(Color.black);
+		frame.getContentPane().setBackground(Color.black);		//Fenster wird schwarz gefärbt
 		
 		frame.setSize(breite, hoehe);				
 		frame.setResizable(false);
 		frame.setVisible(true);									//Fenster ausgeben
 		
 		Grid dg = new Grid();									//dg -- drawgrid
-		setupDraw(dg,0,0,breite,hoehe);						//0,0 sind x,y Werte
+		setupDraw(dg,0,0,breite,hoehe);							//0,0 sind x,y Werte
+		kleinesGrid kg = new kleinesGrid();
+		setupDraw(kg, breite+1, 1, breite, hoehe);
 	}
 	
 	private void setupDraw(JLabel draw, int x, int y, int breite, int hoehe) {
 		draw.setBounds(x,y,breite,hoehe);
 		draw.setVisible(true);
-		frame.add(draw);
+		frame.add(draw);										//um es dem Fenster hinzuzufügen
 	}
 }
