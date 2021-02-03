@@ -1,18 +1,26 @@
 package Grafik;
 import java.awt.Color;
 
-import javax.swing.JFrame;
+/*In dieser Klasse wird das Fenster erstellt, auf welchem das Spiel Tetris gezeichnet wird.
+ * 
+ */
+
+import javax.swing.JFrame;  
 import javax.swing.JLabel;
+/* Das Package javax.swing wird aus dem Modul java.desktop importiert. Die beiden Klassen JLabel und JFrame sind in diesem Package
+ * enthalten. JFrame wird benutzt, um ein Fenster für das Spiel zu erstellen. JLabel wird verwendet, um
+ */
 
 import Steuerung.keyhandler;
 
 public class Gui {
 	public static int breite	= 797;							//Breite: 497 Pixel Spielfeld, 300 Pixel extra
-	public static int hoehe		= 904;							//Hoehe: 865 Pixel Spielfeld, 39 Pixel für den oberen Balken
-	JFrame frame;
+	public static int hoehe		= 904;							//Hoehe: 865 Pixel Spielfeld, 39 Pixel für den oberen Fensterrahmen. Beide Variablen sind Instanzvariablen, damit sie nicht mit einem Objekt aufgeruft werden müssen.
+	JFrame frame;												//Referenzvariable frame mit dem Typ JFrame. frame ist hier also das Fenster
 	
-	public void Fenster () {
-		frame = new JFrame("Tetris");							//Name oben im Fenster¨
+	public void Fenster() {
+		//Die Methode Fenster erzeugt die GUI, damit die Klasse Gui nicht die komplette GUI erzeugt.
+		frame = new JFrame("Tetris");							//erstellen 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//X für Fenster dass es sich schliessen lässt
 		
 		frame.getContentPane().setBackground(Color.black);		//Fenster wird schwarz gefärbt
@@ -24,7 +32,7 @@ public class Gui {
 		Grid dg = new Grid();									//dg -- drawgrid
 		setupDraw(dg,0,0,breite,hoehe);							//0,0 sind x,y Werte
 		kleinesGrid kg = new kleinesGrid();
-		setupDraw(kg, breite+1, 1, breite, hoehe);
+		setupDraw(kg, 534, 0, breite, hoehe);
 	}
 	
 	private void setupDraw(JLabel draw, int x, int y, int breite, int hoehe) {
