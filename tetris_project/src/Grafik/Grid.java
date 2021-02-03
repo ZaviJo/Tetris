@@ -1,4 +1,5 @@
 package Grafik;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JLabel;
@@ -6,8 +7,7 @@ import javax.swing.JLabel;
 public class Grid extends JLabel {
 	/*Die Klasse Grid zeichnet das grosse Spielfeld, bestehend aus 10*18 Feldern. Die Klasse ist eine Subklasse
 	 *der Klasse JLabel. Die Klasse JLabel ermöglicht es, Bilder und Texte auf einem Fenster darzustellen,
-	 *ohne dass der Benutzer etwas auf dem Bildschirm auswählen kann.
-	 * 
+	 *ohne dass der Benutzer etwas auf dem Bildschirm auswählen kann. Die Klassen Color und Graphics werden in der Methode paintComponent benutzt.
 	 */
 	
 	@Override
@@ -21,10 +21,9 @@ public class Grid extends JLabel {
 		
 		for (int i = 0; i < 10; i++) {					//10 Felder in Breite
 			for (int j = 0; j < 18; j++) {				//18 Felder in die Höhe
-				g.drawRect(i*48, j*48, 48, 48);			//Die Methode drawRect() zeichnet ein Rechteck mit einer Ecke an der Stelle (i*48/j*48).
+				g.drawRect(i*48, j*48, 48, 48);			//Die Methode drawRect() zeichnet ein Rechteck mit einer Ecke an der Stelle (i*48/j*48). Ein Rechteck ist ein Quadrat mit Seitenlänge = 48.
 			}
 		}
-		
 		repaint();										//repaint() aktualisiert das Spielfeld, damit es neugezeichnet wird.				
 	}
 }

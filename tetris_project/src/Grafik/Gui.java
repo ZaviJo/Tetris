@@ -1,4 +1,5 @@
 package Grafik;
+
 import java.awt.Color;
 
 /*In dieser Klasse wird das Fenster erstellt, auf welchem das Spiel Tetris gezeichnet wird.
@@ -14,8 +15,10 @@ import javax.swing.JLabel;
 import Steuerung.Keyhandler;
 
 public class Gui {
-	public static int breite	= 481;							//Breite: 480 + 1 Pixel Spielfeld. 10*48 Pixel breite Quadrate.
-	public static int hoehe		= 865;							//Hoehe: 864 + 1 Pixel Spielfeld. 18*48 Pixel lange Quadrate.
+	public static int breite_dg	= 481;							//Breite: 480 + 1 Pixel Spielfeld. 10*48 Pixel breite Quadrate.
+	public static int hoehe_dg	= 865;							//Hoehe: 864 + 1 Pixel Spielfeld. 18*48 Pixel lange Quadrate.
+	public static int breite_kg = 193;							//Breite: 192 + 1 Pixel Spielfeld. 4*48 Pixel breite Quadrate.
+	public static int hoehe_kg 	= 193;							//Hoehe: 192 + 1 Pixel Spielfeld. 4*48 Pixel lange Quadrate.
 	JFrame frame;												//Referenzvariable frame mit dem Typ JFrame. frame ist hier also das Fenster
 	
 	public void Fenster() {
@@ -32,7 +35,7 @@ public class Gui {
 		 *Fensterbreite: breite des Spielfeldes + 300 Pixel für eine Vorschau des nächsten Blockes + 17 Pixel Fensterrand
 		 *Fensterhoehe: hoehe des Spielfeldes + 39 Pixel Fensterrahmen
 		 */
-		frame.setSize(breite +300+17, hoehe+39);				
+		frame.setSize(breite_dg +300+17, hoehe_dg+39);				
 		
 		frame.setLocationRelativeTo(null);						//Fenster wird in die Mitte gesetzt.
 		frame.setResizable(false);								//Grösse des Fensters darf nicht angepasst werden.
@@ -40,10 +43,10 @@ public class Gui {
 		//frame.requestFocus(); 								//Fenster fokussieren
 		frame.setVisible(true);									//Das Fenster wird sichtbar gemacht.
 		
-		kleinesGrid kg = new kleinesGrid();
-		setupDraw(kg,breite+48, 0, 193, 193);
-		Grid dg = new Grid();									//dg -- drawgrid
-		setupDraw(dg,0,0,breite,hoehe);							//0,0 sind x,y Werte
+		kleinesGrid kg = new kleinesGrid();						//Referenzvariable der Klasse kleinesGrid. 
+		setupDraw(kg,breite_dg+48, 0, breite_kg, hoehe_kg);		//Methode setupDraw wird für das kleineGrid aufgerufen.
+		Grid dg = new Grid();									//Referenzvariable der Klasse Grid.
+		setupDraw(dg,0,0,breite_dg,hoehe_dg);					//Methode setupDraw wird für das Grid aufgerufen.
 		
 	}
 	
