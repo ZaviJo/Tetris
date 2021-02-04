@@ -1,7 +1,6 @@
 package Steuerung;
 
-/*Es braucht die 2 imports für das Interface KeyListener.
- */
+//Es braucht die 2 imports für das Interface KeyListener.
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
