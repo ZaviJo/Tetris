@@ -12,7 +12,7 @@ public class Keyhandler implements KeyListener{
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		//Was macht
+		//Die Methode wird aufgerufen, wenn eine Taste gehalten wird. Die Methode wird dann mehrmals durchgeführt.
 		
 	}
 

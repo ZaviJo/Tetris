@@ -1,10 +1,10 @@
 /* Datum: 05.02.2021; Projektname: Programmierprojekt Neuimplementierung von Tetris;
  * Namen: Sebastian Gavrilas, Marius Hächler, Dani Tanner; 
- * Hauptquellen: VIDEOS,
- * Aufteilung: 	Alle: Klassen Gui, Blöcke
- * 				Sebastian: 
- * 				Marius:
- * 				Dani:
+ * Hauptquellen: https://docs.oracle.com/en/java/javase/14/docs/api/index.html
+ * Aufteilung: 	Alle: Klassen Gui, Grid, MainKlasse 
+ * 				Sebastian: Block
+ * 				Marius: Block
+ * 				Dani: Blocktyp
  */
 
 /* Dies ist das Hauptpackage. Hier liegt die Mainklasse, in welcher die Mainmethode arbeitet. Sie ist für das gesamte Spiel verantwortlich. 
