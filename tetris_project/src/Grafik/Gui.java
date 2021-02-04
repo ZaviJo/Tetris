@@ -43,7 +43,7 @@ public class Gui {
 		//frame.requestFocus(); 								//Fenster fokussieren
 		frame.setVisible(true);									//Das Fenster wird sichtbar gemacht.
 		
-		kleinesGrid kg = new kleinesGrid();						//Referenzvariable der Klasse kleinesGrid. 
+		KleinesGrid kg = new KleinesGrid();						//Referenzvariable der Klasse kleinesGrid. 
 		setupDraw(kg,breite_dg+48, 0, breite_kg, hoehe_kg);		//Methode setupDraw wird für das kleineGrid aufgerufen.
 		Grid dg = new Grid();									//Referenzvariable der Klasse Grid.
 		setupDraw(dg,0,0,breite_dg,hoehe_dg);					//Methode setupDraw wird für das Grid aufgerufen.
