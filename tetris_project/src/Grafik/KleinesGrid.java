@@ -2,8 +2,10 @@ package Grafik;
 
 import java.awt.Color;
 import java.awt.Graphics;
-
 import javax.swing.JLabel;
+/*Die Klassen Color und Graphics werden in der Methode paintComponent benutzt.
+ * 
+ */
 
 public class KleinesGrid extends JLabel{
 	/*Die Klasse kleinesGrid zeichnet die kleine Anzeige rechts im Fenster, bestehend aus 4*4 Feldern. Die Klasse ist eine Subklasse
