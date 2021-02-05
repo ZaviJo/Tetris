@@ -22,15 +22,15 @@ public class Block {
 		 */
 		case I:
 			groesse = 4;
-			color = Color.magenta;
+			color = Color.cyan;
 			break;
 		case J:
 			groesse = 3;
-			color = Color.orange;
+			color = Color.blue;
 			break;
 		case L:
 			groesse = 3;
-			color = Color.red;
+			color = Color.orange;
 			break;
 		case O:
 			groesse = 2;
@@ -38,15 +38,15 @@ public class Block {
 			break;
 		case S:
 			groesse = 3;
-			color = Color.cyan;
+			color = Color.green;
 			break;
 		case T:
 			groesse = 3;
-			color = Color.green;
+			color = Color.magenta;
 			break;
 		case Z:
 			groesse = 3;
-			color = Color.blue;
+			color = Color.red;
 			break;
 		}
 		
