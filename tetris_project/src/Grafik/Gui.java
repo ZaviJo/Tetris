@@ -29,7 +29,6 @@ public class Gui {
 		
 		frame = new JFrame("Tetris");							//Erstellen des Fensters mit dem Fensternamen "Tetris".
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//Wenn man auf das rote X im Fenster drückt, schliesst es sich.
-		
 		frame.getContentPane().setBackground(Color.black);		//Inhalt des Fensters wird schwarz gefärbt
 		
 		/*Grösse des Fensters:
