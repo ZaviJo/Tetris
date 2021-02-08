@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import Grafik.Block; // ??? vllt kei ahnig
 
 public class Game {
-	public static int score;
-	public static int highscore;
-	public static int scoretoAdd;
+	public static int score = 0;
+	public static int highscore = 0;
+	public static int scoretoAdd = 0;
 	public static boolean SpawnNeuerBlock = false;
 	public static boolean schneller = false;
 	

@@ -5,10 +5,10 @@ import Logik.Game;
 import Logik.Zustand;
 
 public class Spielloop extends Thread{
-	private boolean laufend = true;
+	private static boolean laufend = true;
 	
 	//@Override //vllt ka
-	public void lauf() {
+	public static void lauf() {
 		
 		while(laufend) {
 			try {
