@@ -15,7 +15,8 @@
  */
 package Main;
 
-import Grafik.*; 
+import Grafik.*;
+import Logik.Game; 
 /* Die Klassen aus dem Package Grafik werden importiert. Das Package Grafik wird benötigt, um alle grafischen Teile 
  * von Tetris zu importieren. Das sind das Spielfeld, die bewegenden Blöcke und die Anzeige für den nächsten Block.
  * Das Package Steuerung wird zukünftig benötigt, um die Steuerung der Spielelemente zu ermöglichen.
@@ -24,9 +25,21 @@ import Grafik.*;
 public class MainKlasse {
 
 	public static void main(String[] args) {
+		
+		Game.aktuellerBlock = new Block();
+		Game.blocks.add(Game.aktuellerBlock);
+		Game.naechsterBlock = new Block();
 		Gui g = new Gui();			//Ein Gui-Objekt wird erstellt, um die Methoden in der Klasse Gui aufrufen zu können.
 		g.Fenster();				//Die Methode Fenster wird aus der Klasse Gui im Package Grafik importiert.
-
+		
+		startLoop();
+		
+	}
+	
+	public static void startLoop() {
+		Spielloop loop = new Spielloop();
+		loop.start();
+		
 	}
 
 }

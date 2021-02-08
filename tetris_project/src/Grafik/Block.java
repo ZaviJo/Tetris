@@ -127,5 +127,83 @@ public class Block {
 		
 		return grenzen;
 	}
+	public int getTypeValue() {
+		switch (typ) {
+		case I:
+			return 1;
+		case O:
+			return 2;
+		case T:
+			return 3;
+		case L: 
+			return 4;
+		case J:
+			return 5;
+		case Z:
+			return 6;
+		case S:
+			return 7;
+		}
+		return 0;
+	}
 	
+	public Blocktyp getTyp() {
+		return typ;
+	}
+
+	public void setTyp(Blocktyp typ) {
+		this.typ = typ;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+	public int getGroesse() {
+		return groesse;
+	}
+
+	public void setGroesse(int groesse) {
+		this.groesse = groesse;
+	}
+
+	public int getRotation() {
+		return rotation;
+	}
+
+	public void setRotation(int rotation) {
+		this.rotation = rotation;
+	}
+
+	public int[][][] getGrenzen() {
+		return grenzen;
+	}
+
+	public void setGrenzen(int[][][] grenzen) {
+		this.grenzen = grenzen;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	
+
+	
+
 }

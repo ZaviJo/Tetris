@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JLabel;
 
+import Logik.Game;
+import Logik.Umrechnen;
+
 public class Grid extends JLabel {
 	/*Die Klasse Grid zeichnet das grosse Spielfeld, bestehend aus 10*18 Feldern. Die Klasse ist eine Subklasse
 	 *der Klasse JLabel. Die Klasse JLabel ermöglicht es, Bilder und Texte auf einem Fenster darzustellen,
@@ -16,6 +19,17 @@ public class Grid extends JLabel {
 		 *um das Spielfeld zeichnen zu können. 
 		 */
 		super.paintComponent(g);
+		
+		
+		g.setColor(Game.aktuellerBlock.getColor());
+		for(int i=0; i< Game.aktuellerBlock.getGrenzen()[Game.aktuellerBlock.getRotation()].length; i++) {
+			for(int j=0; j< Game.aktuellerBlock.getGrenzen()[Game.aktuellerBlock.getRotation()][i].length; j++) {
+				if(Game.aktuellerBlock.getGrenzen()[Game.aktuellerBlock.getRotation()][i][j]==1) {
+					g.fillRect(Umrechnen.toKoord(Game.aktuellerBlock.getX()+i), 
+							Umrechnen.toKoord(Game.aktuellerBlock.getY()+j), 48, 48);
+				}
+			}
+		}
 		
 		g.setColor(Color.white);						//Die Zeichenfarbe wird auf weiss gesetzt.
 		
