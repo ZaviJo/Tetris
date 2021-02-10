@@ -39,7 +39,7 @@ public class MainKlasse {
 	public static void startLoop() {
 		Spielloop loop = new Spielloop();
 		loop.start();
-	Spielloop.lauf(); // notlösung, startLoop sollte eig lauf() aufrufen glaub aber sie macht einfach nichts (was ne faule funktion)
+	
 	}
 
 }
