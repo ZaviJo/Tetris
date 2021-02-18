@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import Grafik.Block; // ??? vllt kei ahnig
 
 public class Game {
-	public static int score = 0;
-	public static int highscore = 0;
-	public static int scoretoAdd = 0;
-	public static boolean SpawnNeuerBlock = false;
-	public static boolean schneller = false;
+	/*Hier befinden sich die Grundvariablen für das Spiel. 
+	 * 
+	 */
+	public static int score = 0;						//Statisch um es überall aufrufen zu können.
+	public static int highscore = 0;					//ebenso
+	public static int scoreToAdd = 0;					//Variable ist für die Punkteaddition wichtig.
+	public static boolean SpawnNeuerBlock = false;		//Variable ist für die Erstellung eines neuen Blockes notwendig, wenn true wird ein neuer erstellt.
+	public static boolean schneller = false;			//Wenn man die Pfeiltaste nach unten drückt, beschleunigt sich der Block
 	
 	public static ArrayList<Block> blocks = new ArrayList<Block>(); 
 	public static Block aktuellerBlock, naechsterBlock;
