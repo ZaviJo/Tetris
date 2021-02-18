@@ -67,7 +67,7 @@ public class Block {
 	
 	public int[][][] blockBilder(Blocktyp typ) {
 		/*In dieser Methode werden die Blöcke je nach Typ mit ihren Grenzen festgesetzt. Alle Grenzen bestehen in der
-		 *1. Dimension aus ihrer Anzahl Rotationen, was immer 4 ist. Die 2. und 3. Dimension legen fest, wie der Block
+		 *1. Dimension aus ihrer Anzahl Rotationen, was immer 4 resp. 0 ist. Die 2. und 3. Dimension legen fest, wie der Block
 		 *aussieht. Die meisten Blöcke haben ein 3*3 Raster ausser der I-Block mit 4*4 und der O-Block mit 2*2. Wenn in
 		 *diesen Rastern eine 1 steht, ist ein Quadrant gefüllt. 
 		 *Die Methode gibt ein dreidimensionales Array mit Datentyp int für jeden erstellten Block aus.
@@ -149,6 +149,10 @@ public class Block {
 		}
 		return 0;
 	}
+	
+	/*In den folgenden Zeilen sind alles Getter und Setter der Klasse Block aufgelistet. Diese werden verwendet, um die Informationen
+	 *der Blöcke an andere Klassen übergeben zu können.
+	*/
 	
 	public Blocktyp getTyp() {
 		return typ;
