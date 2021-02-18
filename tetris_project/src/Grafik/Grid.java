@@ -22,6 +22,10 @@ public class Grid extends JLabel {
 		
 		
 		g.setColor(Game.aktuellerBlock.getColor());
+		/*Die nachfolgende Schleife geht die Informationen der dreidimensionalen Blöcke durch. Das erste Element ist die momentane Rotation, da benötigt es keine spezifische Schleife.
+		 *Das zweite Element ist die x-Spalte, was mit der ersten Schleife angeschaut wird. Das dritte Element (y-Spalte) wird mit der verschachtelten Schleife durchsucht.
+		 *Wenn nun ein Element 1 ist, werden die Koordinaten mithilfe der Klasse Umrechnen
+		 */
 		for(int i=0; i< Game.aktuellerBlock.getGrenzen()[Game.aktuellerBlock.getRotation()].length; i++) {
 			for(int j=0; j< Game.aktuellerBlock.getGrenzen()[Game.aktuellerBlock.getRotation()][i].length; j++) {
 				if(Game.aktuellerBlock.getGrenzen()[Game.aktuellerBlock.getRotation()][i][j]==1) {
