@@ -131,27 +131,28 @@ public class Block {
 	
 	
 
-	public int getTypeValue() {
+	public int getTypWert() {
+		//Diese Methode gibt jedem Blocktyp eine spezifische Nummer. Auf dem Spielfeld werden diese Zahlen entsprechend gespeichert.
 		switch (typ) {
 		case I:
 			return 1;
-		case O:
-			return 2;
-		case T:
-			return 3;
-		case L: 
-			return 4;
 		case J:
-			return 5;
-		case Z:
-			return 6;
+			return 2;
+		case L:
+			return 3;
+		case O: 
+			return 4;
 		case S:
+			return 5;
+		case T:
+			return 6;
+		case Z:
 			return 7;
 		}
 		return 0;
 	}
 	
-	/*In den folgenden Zeilen sind alles Getter und Setter der Klasse Block aufgelistet. Diese werden verwendet, um die Informationen
+	/*In den folgenden Zeilen sind alle Getter und Setter der Klasse Block aufgelistet. Diese werden verwendet, um die Informationen
 	 *der Blöcke an andere Klassen übergeben zu können.
 	*/
 	
