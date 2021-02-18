@@ -1,10 +1,13 @@
 package Main;
 
-import Grafik.Block;
+import Grafik.Block;		//Wichtig für
 import Logik.Game;
 import Logik.Zustand;
 
 public class Spielloop extends Thread{
+	/*Unsere Spielloop ist eine Erweiterung der Klasse Thread. Threads werden benutzt, um gleichzeitig mehrere Operationen
+	 * effizient durchführen zu können.
+	 */
 	private boolean laufend = true;			
 	
 	//@Override //vllt ka

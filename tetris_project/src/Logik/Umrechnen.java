@@ -2,7 +2,6 @@ package Logik;
 
 public class Umrechnen {
 	/*Diese Klasse rechnet die Zell-Koordinaten der Blöcke in Pixel-Koordinaten um und umgekehrt.
-	 * 
 	 */
 	public static int toKoord(int zelle) {
 		//Von Zelle zu Pixelkoordinaten.
