@@ -24,13 +24,13 @@ public class Grid extends JLabel {
 		g.setColor(Game.aktuellerBlock.getColor());
 		/*Die nachfolgende Schleife geht die Informationen der dreidimensionalen Blöcke durch. Das erste Element ist die momentane Rotation, da benötigt es keine spezifische Schleife.
 		 *Das zweite Element ist die x-Spalte, was mit der ersten Schleife angeschaut wird. Das dritte Element (y-Spalte) wird mit der verschachtelten Schleife durchsucht.
-		 *Wenn nun ein Element 1 ist, werden die Koordinaten mithilfe der Klasse Umrechnen
+		 *Wenn nun ein Element 1 ist, werden die Koordinaten mithilfe der Klasse Umrechnen umgerechnet. Die Methode toKoord() liefert die x-y-Werte in Pixelanzahl.
 		 */
 		for(int i=0; i< Game.aktuellerBlock.getGrenzen()[Game.aktuellerBlock.getRotation()].length; i++) {
 			for(int j=0; j< Game.aktuellerBlock.getGrenzen()[Game.aktuellerBlock.getRotation()][i].length; j++) {
 				if(Game.aktuellerBlock.getGrenzen()[Game.aktuellerBlock.getRotation()][i][j]==1) {
-					g.fillRect(Umrechnen.toKoord(Game.aktuellerBlock.getX()+i), 
-							Umrechnen.toKoord(Game.aktuellerBlock.getY()+j), 48, 48);
+					g.fillRect(Umrechnen.toKoord(Game.aktuellerBlock.getX()+i), Umrechnen.toKoord(Game.aktuellerBlock.getY()+j), 48, 48);
+					//Mit fillRect() werden die entsprechenden Kästchen des Blockes gefüllt. +i/+j wird benötigt, um vom Startpunkt aus die Blöcke zeichnen zu können. Breite und Höhe der Rasterblöcke sind 48 Pixel.
 				}
 			}
 		}
