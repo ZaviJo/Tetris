@@ -15,9 +15,12 @@ public class Spielloop extends Thread {
 		
 		while(laufend) {
 			try {
+			/*Try-Catch wird verwendet, um Fehler während des try auffangen zu können.
+			 * 
+			 */
 				if(Game.zustand == Zustand.ingame) { 						//Wird ausgeführt, wenn der Zustand des Spiels ingame ist. Nur dann werden Sachen aktualisiert.
 					
-					Game.aktuellerBlock.setY(Game.aktuellerBlock.getY()+1);
+					Game.aktuellerBlock.setY(Game.aktuellerBlock.getY()+1);	//Der Block wird um 1 Zelle nach unten bewegt.
 					
 					if(Game.SpawnNeuerBlock) {								//Wenn ein neuer Block erstellt werden muss. Hier: SpawnNeuerBlock = true.
 						Game.blocks.add(Game.naechsterBlock);				//naechsterBlock wird der Arraylist hinzugefügt.
@@ -27,16 +30,13 @@ public class Spielloop extends Thread {
 					}
 				}
 			
-				
-				
-				if(!Game.schneller) {
-					sleep(1000);
+				if(!Game.schneller) {		//Wird aufgerufen, wenn man nicht die Pfeiltaste nach unten drückt.
+					sleep(1000);			//Es wird 1 Sekunde gewartet, bis die nächste Operation durchgeführt wird.
 					}
-				else {
-					sleep(100);
+				else {						//Wenn man die Pfeiltaste nach unten drückt.
+					sleep(100);				//Es werden 100 ms gewartet.
 				}
 			} catch (InterruptedException e) {
-				
 				e.printStackTrace();
 			}
 		}
