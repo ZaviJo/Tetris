@@ -147,6 +147,10 @@ public class Block {
 		return 0;
 	}
 	
+	/*In den folgenden Zeilen sind alles Getter und Setter der Klasse Block aufgelistet. Diese werden verwendet, um die Informationen
+	 *der Blöcke an andere Klassen übergeben zu können.
+	*/
+	
 	public Blocktyp getTyp() {
 		return typ;
 	}
