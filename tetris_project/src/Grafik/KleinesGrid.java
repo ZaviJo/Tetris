@@ -5,6 +5,9 @@ import java.awt.Graphics;
 import javax.swing.JLabel;
 //Die Klassen Color und Graphics werden in der Methode paintComponent benutzt.
 
+import Logik.Game;
+import Logik.Umrechnen;
+
 
 public class KleinesGrid extends JLabel{
 	/*Die Klasse kleinesGrid zeichnet die kleine Anzeige rechts im Fenster, bestehend aus 4*4 Feldern. Die Klasse ist eine Subklasse
@@ -18,6 +21,16 @@ public class KleinesGrid extends JLabel{
 		 *um das Spielfeld zeichnen zu können. 
 		 */
 		super.paintComponent(g);
+		
+		g.setColor(Game.naechsterBlock.getColor());
+		for(int i=0; i< Game.naechsterBlock.getGrenzen()[Game.naechsterBlock.getRotation()].length; i++) {
+			for(int j=0; j< Game.naechsterBlock.getGrenzen()[Game.naechsterBlock.getRotation()][i].length; j++) {
+				if(Game.naechsterBlock.getGrenzen()[Game.naechsterBlock.getRotation()][i][j]==1) {
+					g.fillRect(Umrechnen.toKoord(1+i), 
+							Umrechnen.toKoord(j), 48, 48);
+				}
+			}
+		}
 		
 		g.setColor(Color.white);							//Die Zeichenfarbe wird auf weiss gesetzt.
 		
