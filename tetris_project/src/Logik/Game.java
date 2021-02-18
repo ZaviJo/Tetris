@@ -17,7 +17,7 @@ public class Game {
 	public static Block aktuellerBlock, naechsterBlock;					//Der aktuelle Block und der nächste Block, der in kleinesGrid angezeigt wird.
 	public static int [][] map = new int [10][18];						//Zweidimensionales Array für das Spielfeld. Blöcke sollen in diesem Array dargestellt werden.
 	
-	public static Zustand zustand = Zustand.start;
+	public static Zustand zustand = Zustand.start;		//Der Zustand zu Beginn des Games ist start.
 	
 	public static void zurücksetzen() {
 		/*Die Methode setzt die aktuelle Map zurück. Wird bei einem Spielneustart verwendet.
