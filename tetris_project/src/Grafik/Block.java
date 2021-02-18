@@ -127,6 +127,9 @@ public class Block {
 		
 		return grenzen;
 	}
+	
+	
+
 	public int getTypeValue() {
 		switch (typ) {
 		case I:

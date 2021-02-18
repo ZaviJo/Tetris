@@ -12,7 +12,7 @@ public class Spielloop extends Thread{
 		
 		while(laufend) {
 			try {
-				if(Game.zustand == Zustand.start) {
+				if(Game.zustand == Zustand.ingame) {
 					
 					Game.aktuellerBlock.setY(Game.aktuellerBlock.getY()+1);
 					
