@@ -23,11 +23,16 @@ public class KleinesGrid extends JLabel{
 		super.paintComponent(g);
 		
 		g.setColor(Game.naechsterBlock.getColor());
+		/*Die nachfolgende Schleife geht die Informationen der dreidimensionalen Blöcke durch. Das erste Element ist die momentane Rotation, da benötigt es keine spezifische Schleife.
+		 *Das zweite Element ist die x-Spalte, was mit der ersten Schleife angeschaut wird. Das dritte Element (y-Spalte) wird mit der verschachtelten Schleife durchsucht.
+		 *Wenn nun ein Element 1 ist, werden die Koordinaten mithilfe der Klasse Umrechnen umgerechnet. Die Methode toKoord() liefert die x-y-Werte in Pixelanzahl.
+		 *Es wird naechster Block im kleinen Grid dargestellt.
+		 */
 		for(int i=0; i< Game.naechsterBlock.getGrenzen()[Game.naechsterBlock.getRotation()].length; i++) {
 			for(int j=0; j< Game.naechsterBlock.getGrenzen()[Game.naechsterBlock.getRotation()][i].length; j++) {
 				if(Game.naechsterBlock.getGrenzen()[Game.naechsterBlock.getRotation()][i][j]==1) {
-					g.fillRect(Umrechnen.toKoord(1+i), 
-							Umrechnen.toKoord(j), 48, 48);
+					g.fillRect(Umrechnen.toKoord(i), Umrechnen.toKoord(j), 48, 48);
+					//Mit fillRect() werden die entsprechenden Kästchen des Blockes gefüllt. Die Blöcke werden an der linken oberen Ecke gerichtet. Breite und Höhe der Rasterblöcke sind 48 Pixel.
 				}
 			}
 		}
