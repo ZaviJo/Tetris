@@ -1,8 +1,9 @@
 package Logik;
 
-import Grafik.Block;
+import Grafik.Block;		//Wird für den import von Blöcken benötigt. Blöcke werde den Parametern der Methoden weitergegeben.
 
 public class Kollision {
+	//Die Klasse Kollision besteht aus verschiedenen Methoden, die schauen, ob ein Block mit etwas kollidiert.
 	public static boolean kollMitBlock(Block b, int direction) {
 		switch(direction) {				//-1 für links, 0 für unten, 1 für rechts
 		case -1:
