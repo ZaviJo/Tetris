@@ -21,7 +21,7 @@ public class Kollision {
 						//Wenn nun ein Häuschen gefunden wurde, das gefüllt ist, wird dies fortgesetzt.
 							if(Game.map[b.getX()+i-1][b.getY()+j]>= 1) {
 							//Hier wird nun geprüft, ob die angehende Richtung (Hier: links) schon von einem sitzenden Block (>= 1) besetzt ist.
-							//Wenn nicht, kann der akutelle Block nach links.
+							//Wenn nicht, kann der aktuelle Block nach links.
 								return true;
 								//Es gibt nun eine Kollision, wenn links ein Block ist.
 							}
@@ -162,11 +162,32 @@ public class Kollision {
 			//Wenn man an der rechten Wand ist, soll man nicht rotieren.
 			return true;
 		}
-		block.setX(b.getX());
+		
+		block.setX(b.getX()+2);		//+2, damit man den Block ein wenig nach rechts setzt.
 		if(kollMitWand(block, -1)) {
 			//Wenn man an der linken Wand ist, soll man nicht rotieren.
 			return true;
 		}
+		
+		if(b.getY() > 0) {
+		//Es wird geschaut, ob der aktuelle Block mit gesetzten Blöcken kollidiert.
+			try {
+			//Try-Catch um vor Fehler zu schützen.
+				for (int i=0; i<b.getGrenzen()[rot].length; i++) {	
+					for (int j=0; j<b.getGrenzen()[rot][i].length; j++) {
+						if(b.getGrenzen()[rot][i][j]==1) {
+							if(Game.map[b.getX()+i-1][b.getY()+j]>= 1) {
+								return true;
+							}
+						}
+					}
+				}
+			} catch (Exception e) {
+			//Standardmässig sollen bei Fehler keine Blöcke rotiert werden.
+				return true;
+			}
+		}
+		
 		
 		return false;
 	}

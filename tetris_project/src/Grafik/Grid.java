@@ -20,7 +20,6 @@ public class Grid extends JLabel {
 		 */
 		super.paintComponent(g);
 		
-		
 		g.setColor(Game.aktuellerBlock.getColor());
 		/*Die nachfolgende Schleife geht die Informationen der dreidimensionalen Blöcke durch. Das erste Element ist die momentane Rotation, da benötigt es keine spezifische Schleife.
 		 *Das zweite Element ist die x-Spalte, was mit der ersten Schleife angeschaut wird. Das dritte Element (y-Spalte) wird mit der verschachtelten Schleife durchsucht.
@@ -31,6 +30,46 @@ public class Grid extends JLabel {
 				if(Game.aktuellerBlock.getGrenzen()[Game.aktuellerBlock.getRotation()][i][j]==1) {
 					g.fillRect(Umrechnen.toKoord(Game.aktuellerBlock.getX()+i), Umrechnen.toKoord(Game.aktuellerBlock.getY()+j), 48, 48);
 					//Mit fillRect() werden die entsprechenden Kästchen des Blockes gefüllt. +i/+j wird benötigt, um vom Startpunkt aus die Blöcke zeichnen zu können. Breite und Höhe der Rasterblöcke sind 48 Pixel.
+				}
+			}
+		}
+		
+		for (int i = 0; i<Game.map.length; i++) {
+			for (int j = 0; j<Game.map[i].length; j++) {
+				if(Game.map[i][j] > 0) {
+				//Überall auf dem Spielfeld mit einer Zahl grösser als 0, soll der Block gezeichnet werden.
+					switch(Game.map[i][j]) {
+					case 1: 
+					//Block I
+						g.setColor(Color.CYAN);
+						break;
+					case 2: 
+					//Block J
+						g.setColor(Color.BLUE);
+						break;
+					case 3: 
+					//Block L
+						g.setColor(Color.ORANGE);
+						break;
+					case 4: 
+					//Block O
+						g.setColor(Color.YELLOW);
+						break;
+					case 5: 
+					//Block S
+						g.setColor(Color.GREEN);
+						break;
+					case 6: 
+					//Block T
+						g.setColor(Color.MAGENTA);
+						break;
+					case 7: 
+					//Block Z
+						g.setColor(Color.RED);
+						break;
+					}
+					
+					g.fillRect(Logik.Umrechnen.toKoord(i), Logik.Umrechnen.toKoord(j), 48, 48);
 				}
 			}
 		}

@@ -4,6 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;		//Beide werden für das Interface KeyListener benötigt.
 import Logik.Game;						
 import Logik.Zustand;					//Braucht man für den Aufruf des aktuellen Blockes und des Zustands des Game.
+import Logik.Kollision;					//Braucht man für die Kollisionserkennung.
 
 public class Keyhandler implements KeyListener{
 	/*Die Klasse Keyhandler hört die Tastatureingaben ab. Sie implementiert das Interface KeyListener. 
@@ -29,23 +30,44 @@ public class Keyhandler implements KeyListener{
 		if(Game.zustand == Zustand.ingame) {
 			//Wenn der Spielzustand nun ingame ist, benutzt man verschiedene Tasten um die Blöcke zu bewegen oder 
 			//das Spiel zu pausieren/neuzustarten. 
-			if(e.getKeyCode()== KeyEvent.VK_UP) {	//Wenn die obere Pfeiltaste gedrückt wird, rotiert sich der aktuelle Block.
-				Game.aktuellerBlock.rotate();
+			if(e.getKeyCode()== KeyEvent.VK_UP) {	//Wenn die obere Pfeiltaste gedrückt wird, rotiert sich der aktuelle Block, wenn es keine Kollision gibt.
+				try {
+				//In Try-Catch, da es oft Fehlermeldungen gibt.
+					if(!Kollision.kollInRot(Game.aktuellerBlock)) {
+						Game.aktuellerBlock.rotate();
+					}
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 			}
 			if(e.getKeyCode()== KeyEvent.VK_DOWN) {	//Wenn die untere Pfeiltaste gedrückt wird, beschleunigt sich das Spiel, womit der Block schneller wird.
 					Game.schneller = true;			//schneller wird nun auf true gesetzt.
 			}
 			if(e.getKeyCode()== KeyEvent.VK_LEFT) {	//Wenn man die linke Pfeiltaste drückt, geht der aktuelle Block ein Häuschen nach links.
-				Game.aktuellerBlock.setX(Game.aktuellerBlock.getX()-1);
+				try {
+				//Try-Catch um Spielabbrüche zu vermeiden.
+					if(!Kollision.kollMitWand(Game.aktuellerBlock, -1)&&!Kollision.kollMitBlock(Game.aktuellerBlock, -1)) {
+						Game.aktuellerBlock.setX(Game.aktuellerBlock.getX()-1);
+					}
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 			}
 				
-			if(e.getKeyCode()== KeyEvent.VK_RIGHT) {	//Wenn man die rechte Pfeiltaste drückt, geht der aktuelle Block ein Häuschen nach rechts.
-				Game.aktuellerBlock.setX(Game.aktuellerBlock.getX()+1);
-				
+			if(e.getKeyCode()== KeyEvent.VK_RIGHT) {	//Wenn man die rechte Pfeiltaste drückt, geht der aktuelle Block ein Häuschen nach rechts, wenn es keine Kollision gibt
+				try {
+				//Try-Catch um Spielabbrüche zu vermeiden.
+					if(!Kollision.kollMitWand(Game.aktuellerBlock, 1)&&!Kollision.kollMitBlock(Game.aktuellerBlock, 1)) {
+						Game.aktuellerBlock.setX(Game.aktuellerBlock.getX()+1);
+					}
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 			}
 			if(e.getKeyCode()== KeyEvent.VK_ESCAPE) {	//Wenn ESC gedrückt wird, pausiert das Spiel. Spielzustand = pause
 				Game.zustand = Zustand.pause;
 			}
+			
 		}else if(Game.zustand == Zustand.pause) {		//Wenn das Spiel nun im Zustand pause ist.
 			if(e.getKeyCode()== KeyEvent.VK_ESCAPE) {	//Mit der ESC-Taste wird das Spiel fortgesetzt, Zustand = ingame
 				Game.zustand = Zustand.ingame;
