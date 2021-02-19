@@ -79,6 +79,98 @@ public class Kollision {
 		return false;
 	}
 	
+	public static boolean kollMitWand(Block b, int direction) {
+		/*Diese Methode schaut, ob ein Block mit der Wand kollidiert. Es wird der aktuelle Block und die Bewegungsrichtung mitgegeben.
+		 *Je nach Richtung geschieht etwas anderes. Blöcke können mit Wänden links (-1), rechts(1) oder unten(0) kollidieren.
+		 *Es wird ein boolean Wert zurückgegeben.
+		*/
+		switch(direction) {
+		
+		case -1:
+		//Ist links eine Wand?
+			for (int i=0; i<b.getGrenzen()[b.getRotation()].length; i++) {	
+				for (int j=0; j<b.getGrenzen()[b.getRotation()][i].length; j++) {
+					if(b.getGrenzen()[b.getRotation()][i][j]==1) {
+					//In den vorigen Schleifen und Verzweigungen wird durchgegangen, wie der aktuelle Block aussieht.
+						if(b.getX() + i == 0) {
+						//Es wird nun geprüft, ob der Block am linken Rand angekommen ist.
+							return true;
+						}	
+					}
+				}
+			}
+			break;
+			
+		case 0:
+		//Ist unten eine Wand?
+			for (int i=0; i<b.getGrenzen()[b.getRotation()].length; i++) {	
+				for (int j=0; j<b.getGrenzen()[b.getRotation()][i].length; j++) {
+					if(b.getGrenzen()[b.getRotation()][i][j]==1) {
+					//In den vorigen Schleifen und Verzweigungen wird durchgegangen, wie der aktuelle Block aussieht.
+						if(b.getY() + j == 17) {
+						//Es wird nun geprüft, ob der Block am unteren Rand angekommen ist.
+							Game.SpawnNeuerBlock = true;	//Wenn man an einem Block unten angekommen ist, will man einen neuen Block erschaffen können.
+							blockdazu(b);
+							//Die Methode blockdazu() wird aufgerufen, um den aktuellen Block auf dem Spielfeld zu speichern.
+							//Dies ist nur in diesem Case der Fall, da wenn ein platzierter Block links oder rechts ist, kann man immer noch nach unten.
+							return true;
+						}	
+					}
+				}
+			}
+			break;
+			
+		case 1:
+		//Ist rechts eine Wand?
+			for (int i=0; i<b.getGrenzen()[b.getRotation()].length; i++) {	
+				for (int j=0; j<b.getGrenzen()[b.getRotation()][i].length; j++) {
+					if(b.getGrenzen()[b.getRotation()][i][j]==1) {
+					//In den vorigen Schleifen und Verzweigungen wird durchgegangen, wie der aktuelle Block aussieht.
+						if(b.getX() + (i+2) >= 11) { //i == 9????
+						//Es wird nun geprüft, ob der Block am rechten Rand angekommen ist.
+						//Es ist (i+2), ?????????
+							return true;
+						}	
+					}
+				}
+			}
+			break;
+		}
+		
+		return false;
+	}
+	
+	public static boolean kollInRot(Block b) {
+		/*In dieser Methode wird geprüft, ob beim Rotieren der aktuelle Block mit etwas kollidiert.
+		 * Dazu wird zur Vorsicht die Rotation von 4 auf null gestellt.
+		 * Es wird ein neuer lokaler Block erstellt, der die Instanzvariablen des aktuellen Blocks b übernimmt. Dieser lokale Block schützt vor
+		 * Überschreiben des echten Blockes. 
+		 */
+		int rot = b.getRotation();
+		if(rot == 4) {
+			rot = 0;
+		}
+		
+		Block block = new Block();
+		block.setRotation(rot);
+		block.setGrenzen(b.getGrenzen());
+		block.setGroesse(b.getGroesse());
+		block.setX(b.getX());
+		block.setY(b.getY());
+		
+		if(kollMitWand(block, 1)) {
+			//Wenn man an der rechten Wand ist, soll man nicht rotieren.
+			return true;
+		}
+		block.setX(b.getX());
+		if(kollMitWand(block, -1)) {
+			//Wenn man an der linken Wand ist, soll man nicht rotieren.
+			return true;
+		}
+		
+		return false;
+	}
+	
 	private static void blockdazu(Block b) {
 		//Diese Methode speichert den aktuellen Block b auf dem Spielfeld mit seiner entsprechenden Zahl (I = 1, J = 2, L = 3, usw.)
 		try {
