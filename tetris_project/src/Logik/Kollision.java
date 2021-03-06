@@ -147,15 +147,15 @@ public class Kollision {
 		 * Es wird ein neuer lokaler Block erstellt, der die Instanzvariablen des aktuellen Blocks b übernimmt. Dieser lokale Block schützt vor
 		 * Überschreiben des echten Blockes. 
 		 */
-		int rot = b.getRotation();
+		int rot = b.getRotation() + 1;
 		if(rot == 4) {
 			rot = 0;
 		}
-		int rot_next = rot+1;
+		/*int rot_next = rot+1;
 		if(rot_next==4) {
 			rot_next = 0;
 		}
-		
+		*/
 		
 		Block block = new Block();
 		block.setRotation(rot);
@@ -171,7 +171,7 @@ public class Kollision {
 				//Try-Catch um vor Fehler zu schützen.
 					for (int i=0; i<b.getGrenzen()[rot].length; i++) {	
 						for (int j=0; j<b.getGrenzen()[rot][i].length; j++) {
-							if(b.getGrenzen()[rot_next][i][j]==1) {
+							if(b.getGrenzen()[rot][i][j]==1) {
 								if(Game.map[b.getX()+i][b.getY()+j]>= 1) {
 								//>=1 da gesetzte Blöcke je nach Blocktyp Werte von 1-7 haben. 
 									return true;
@@ -186,12 +186,14 @@ public class Kollision {
 			}
 		
 		try {
-			//Try-Catch um vor Fehler zu schützen.
+		//Try-Catch um vor Fehler zu schützen.
+		/*In den folgenden Schleifen wird zu 
+		 * 
+		 */
 				for (int i=0; i<b.getGrenzen()[rot].length; i++) {	
 					for (int j=0; j<b.getGrenzen()[rot][i].length; j++) {
-						if(b.getGrenzen()[rot_next][i][j]== 1) {
+						if(b.getGrenzen()[rot][i][j]== 1) {
 							if(b.getX()+(i+1) >= 11 || b.getX()+1 == 0) {
-							 
 								return true;
 							}
 						}
@@ -201,16 +203,7 @@ public class Kollision {
 			//Standardmässig sollen bei Fehler keine Blöcke rotiert werden.
 				return true;
 			}
-		/*
-		if(kollMitWand(block, 1)) {
-			//Wenn man an der rechten Wand ist, soll man nicht rotieren.
-			return true;
-		}
-		if(kollMitWand(block, -1)) {
-			//Wenn man an der linken Wand ist, soll man nicht rotieren.
-			return true;
-		}
-		*/
+		
 		return false;
 	}
 	
