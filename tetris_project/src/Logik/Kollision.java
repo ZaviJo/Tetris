@@ -166,13 +166,14 @@ public class Kollision {
 		
 		
 		if(b.getY() > 0) {
-			//Es wird geschaut, ob der aktuelle Block mit gesetzten Blöcken kollidiert.
+			//Es wird geschaut, ob der aktuelle Block mit gesetzten Blöcken in seiner Rotation kollidieren wird. 
 				try {
 				//Try-Catch um vor Fehler zu schützen.
 					for (int i=0; i<b.getGrenzen()[rot].length; i++) {	
 						for (int j=0; j<b.getGrenzen()[rot][i].length; j++) {
 							if(b.getGrenzen()[rot_next][i][j]==1) {
 								if(Game.map[b.getX()+i][b.getY()+j]>= 1) {
+								//>=1 da gesetzte Blöcke je nach Blocktyp Werte von 1-7 haben. 
 									return true;
 								}
 							}
@@ -184,6 +185,23 @@ public class Kollision {
 				}
 			}
 		
+		try {
+			//Try-Catch um vor Fehler zu schützen.
+				for (int i=0; i<b.getGrenzen()[rot].length; i++) {	
+					for (int j=0; j<b.getGrenzen()[rot][i].length; j++) {
+						if(b.getGrenzen()[rot_next][i][j]== 1) {
+							if(b.getX()+(i+1) >= 11 || b.getX()+1 == 0) {
+							 
+								return true;
+							}
+						}
+					}
+				}
+			} catch (Exception e) {
+			//Standardmässig sollen bei Fehler keine Blöcke rotiert werden.
+				return true;
+			}
+		/*
 		if(kollMitWand(block, 1)) {
 			//Wenn man an der rechten Wand ist, soll man nicht rotieren.
 			return true;
@@ -192,7 +210,7 @@ public class Kollision {
 			//Wenn man an der linken Wand ist, soll man nicht rotieren.
 			return true;
 		}
-		
+		*/
 		return false;
 	}
 	
