@@ -15,6 +15,9 @@
  */
 package Main;
 
+import java.awt.FontFormatException;
+import java.io.IOException;
+
 import Grafik.*;
 import Logik.Game; 
 /* Die Klassen aus dem Package Grafik werden importiert. Das Package Grafik wird benötigt, um alle grafischen Teile 
@@ -31,7 +34,12 @@ public class MainKlasse {
 		Game.naechsterBlock = new Block();		//Der zweite Block wird erstellt.
 		
 		Gui g = new Gui();			//Ein Gui-Objekt wird erstellt, um die Methoden in der Klasse Gui aufrufen zu können.
-		g.Fenster();				//Die Methode Fenster wird aus der Klasse Gui im Package Grafik importiert.
+		try {
+			g.Fenster();
+		} catch (FontFormatException | IOException e) {
+			
+			e.printStackTrace();
+		}				//Die Methode Fenster wird aus der Klasse Gui im Package Grafik importiert.
 		
 		startLoop();				//Die Methode startLoop() wird aufgerufen.
 		
