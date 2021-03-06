@@ -9,11 +9,11 @@ public class Spielloop extends Thread {
 	/*Spielloop ist eine Erweiterung der Klasse Thread. Threads werden benutzt, um gleichzeitig mehrere Operationen effizient durchführen zu können.
 	 * Hier wird das Spiel dauernd aktualisiert.
 	 */
-	private boolean laufend = true;			
+	private boolean laufend = true;
+	
+	public void run() {				
 	/*Methode run() wird überschrieben, um unser eigenes Programm einfügen zu können. 
 	 */
-	public void run() {				
-		
 		while(laufend) {
 			try {
 			/*Try-Catch wird verwendet, um Fehler während des try auffangen zu können.
@@ -37,8 +37,11 @@ public class Spielloop extends Thread {
 				}
 			
 				if(!Game.schneller) {		//Wird aufgerufen, wenn man nicht die Pfeiltaste nach unten drückt.
-					sleep(1000);			//Es wird 1 Sekunde gewartet, bis die nächste Operation durchgeführt wird.
+					sleep(Game.warten);			//Es wird 1 Sekunde gewartet, bis die nächste Operation durchgeführt wird.
+					if (Game.warten > 100) {
+						Game.warten -= 5;
 					}
+				}
 				else {						//Wenn man die Pfeiltaste nach unten drückt.
 					sleep(100);				//Es werden 100 ms gewartet.
 				}

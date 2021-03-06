@@ -11,6 +11,7 @@ public class Game {
 	public static int scoreToAdd = 0;					//Variable ist für die Punkteaddition wichtig.
 	public static boolean SpawnNeuerBlock = false;		//Variable ist für die Erstellung eines neuen Blockes notwendig, wenn true wird ein neuer erstellt.
 	public static boolean schneller = false;			//Wenn man die Pfeiltaste nach unten drückt, beschleunigt sich der Block
+	public static int warten = 1000;
 	
 	public static ArrayList<Block> blocks = new ArrayList<Block>(); 	//ArrayLists haben den Vorteil, dass man sie einfach erweitern und bearbeiten kann.
 	public static Block aktuellerBlock, naechsterBlock;					//Der aktuelle Block und der nächste Block, der in kleinesGrid angezeigt wird.
@@ -27,6 +28,7 @@ public class Game {
 			}
 		}
 		score = 0;						//Score wird auf 0 gesetzt.
+		warten = 1000;
 	}
 
 

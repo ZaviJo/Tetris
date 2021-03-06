@@ -81,8 +81,8 @@ public class Grid extends JLabel {
 				g.drawRect(i*48, j*48, 48, 48);			//Die Methode drawRect() zeichnet ein Rechteck mit einer Ecke an der Stelle (i*48/j*48). Ein Rechteck ist ein Quadrat mit Seitenlänge = 48.
 			}
 		}
-		g.drawString("SCORE; "+Game.score,600 , 250);
-		g.drawString("HIGHSCORE; "+Game.highscore,600 , 280);
+		g.drawString("SCORE: "+Game.score, Gui.breite_dg + 48, Gui.hoehe_kg + 48);
+		g.drawString("HIGHSCORE: "+Game.highscore,Gui.breite_dg + 48, Gui.hoehe_kg + 68);
 		
 		repaint();										//repaint() aktualisiert das Spielfeld, damit es neugezeichnet wird.				
 	}
