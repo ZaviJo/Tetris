@@ -50,12 +50,12 @@ public class Gui {
 		
 		
 		
-		Menu me = new Menu();
-		setupDraw(me,0, 0, breite_dg, hoehe_dg);
+		Menu me = new Menu();									//Referenzvariable der Klasse kleinesGrid.
+		setupDraw(me,0, 0, breite_dg, hoehe_dg);				//Methode setupDraw wird für das kleineGrid aufgerufen.
 		KleinesGrid kg = new KleinesGrid();						//Referenzvariable der Klasse kleinesGrid. 
 		setupDraw(kg,breite_dg+48, 0, breite_kg, hoehe_kg);		//Methode setupDraw wird für das kleineGrid aufgerufen.
 		Grid dg = new Grid();									//Referenzvariable der Klasse Grid.
-		setupDraw(dg,0,0,breite_dg + 150,hoehe_dg);				//Methode setupDraw wird für das Grid aufgerufen.
+		setupDraw(dg,0,0,breite_dg + 150,hoehe_dg);				//Methode setupDraw wird für das Grid aufgerufen. +150 Damit der Score auch in diesem Bereich aufgezeichnet wird. 
 		
 	}
 	

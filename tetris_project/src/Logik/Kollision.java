@@ -1,7 +1,5 @@
 package Logik;
 
-import java.util.Iterator;
-
 import Grafik.Block;		//Wird für den import von Blöcken benötigt. Blöcke werde den Parametern der Methoden weitergegeben.
 import Steuerung.Datahandler;
 
@@ -129,7 +127,7 @@ public class Kollision {
 				for (int j=0; j<b.getGrenzen()[b.getRotation()][i].length; j++) {
 					if(b.getGrenzen()[b.getRotation()][i][j]==1) {
 					//In den vorigen Schleifen und Verzweigungen wird durchgegangen, wie der aktuelle Block aussieht.
-						if(b.getX() + (i+2) >= 11) { //i == 9????
+						if(b.getX()+(i+2) >= 11) { //i == 9????
 						//Es wird nun geprüft, ob der Block am rechten Rand angekommen ist.
 						//Es ist (i+2), ?????????
 							return true;
@@ -153,6 +151,11 @@ public class Kollision {
 		if(rot == 4) {
 			rot = 0;
 		}
+		int rot_next = rot+1;
+		if(rot_next==4) {
+			rot_next = 0;
+		}
+		
 		
 		Block block = new Block();
 		block.setRotation(rot);
@@ -161,36 +164,34 @@ public class Kollision {
 		block.setX(b.getX());
 		block.setY(b.getY());
 		
+		
+		if(b.getY() > 0) {
+			//Es wird geschaut, ob der aktuelle Block mit gesetzten Blöcken kollidiert.
+				try {
+				//Try-Catch um vor Fehler zu schützen.
+					for (int i=0; i<b.getGrenzen()[rot].length; i++) {	
+						for (int j=0; j<b.getGrenzen()[rot][i].length; j++) {
+							if(b.getGrenzen()[rot_next][i][j]==1) {
+								if(Game.map[b.getX()+i][b.getY()+j]>= 1) {
+									return true;
+								}
+							}
+						}
+					}
+				} catch (Exception e) {
+				//Standardmässig sollen bei Fehler keine Blöcke rotiert werden.
+					return true;
+				}
+			}
+		
 		if(kollMitWand(block, 1)) {
 			//Wenn man an der rechten Wand ist, soll man nicht rotieren.
 			return true;
 		}
-		
-		block.setX(b.getX()+2);		//+2, damit man den Block ein wenig nach rechts setzt.
 		if(kollMitWand(block, -1)) {
 			//Wenn man an der linken Wand ist, soll man nicht rotieren.
 			return true;
 		}
-		
-		if(b.getY() > 0) {
-		//Es wird geschaut, ob der aktuelle Block mit gesetzten Blöcken kollidiert.
-			try {
-			//Try-Catch um vor Fehler zu schützen.
-				for (int i=0; i<b.getGrenzen()[rot].length; i++) {	
-					for (int j=0; j<b.getGrenzen()[rot][i].length; j++) {
-						if(b.getGrenzen()[rot][i][j]==1) {
-							if(Game.map[b.getX()+i-1][b.getY()+j]>= 1) {
-								return true;
-							}
-						}
-					}
-				}
-			} catch (Exception e) {
-			//Standardmässig sollen bei Fehler keine Blöcke rotiert werden.
-				return true;
-			}
-		}
-		
 		
 		return false;
 	}

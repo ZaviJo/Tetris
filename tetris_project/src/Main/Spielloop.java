@@ -23,7 +23,6 @@ public class Spielloop extends Thread {
 					if(!Kollision.kollMitWand(Game.aktuellerBlock, 0)&&!Kollision.kollMitBlock(Game.aktuellerBlock, 0)) {
 					//Wenn es keine Kollision mit der Wand gibt oder mit einem Block nach unten gibt.
 						Game.aktuellerBlock.setY(Game.aktuellerBlock.getY()+1);		//Der Block wird um 1 Zelle nach unten bewegt.
-						//Kollision.kollMitWand(Game.aktuellerBlock, 0);		//Prüfen, ob unten eine Wand ist.
 					}
 					
 					
