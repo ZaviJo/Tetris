@@ -38,7 +38,7 @@ public class Spielloop extends Thread {
 				if(!Game.schneller) {		//Wird aufgerufen, wenn man nicht die Pfeiltaste nach unten drückt.
 					sleep(Game.warten);			//Es wird 1 Sekunde gewartet, bis die nächste Operation durchgeführt wird.
 					if (Game.warten > 100) {
-						Game.warten -= 5;
+						Game.warten = Game.warten - (Game.warten/200);
 					}
 				}
 				else {						//Wenn man die Pfeiltaste nach unten drückt.
