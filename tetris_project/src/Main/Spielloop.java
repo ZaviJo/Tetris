@@ -28,6 +28,7 @@ public class Spielloop extends Thread {
 					
 					
 					if(Game.SpawnNeuerBlock) {								//Wenn ein neuer Block erstellt werden muss. Hier: SpawnNeuerBlock = true.
+						Kollision.volleReihe(1);
 						Game.blocks.add(Game.naechsterBlock);				//naechsterBlock wird der Arraylist hinzugefügt.
 						Game.aktuellerBlock = Game.naechsterBlock;			//aktuellerBlock wird überschrieben
 						Game.naechsterBlock = new Block();					//ein neuer Block wird erstellt.

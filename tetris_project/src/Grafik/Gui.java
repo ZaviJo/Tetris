@@ -24,10 +24,10 @@ public class Gui {
 	//kleines Grid
 	public static int breite_kg = 193;							//Breite: 192 + 1 Pixel Spielfeld. 4*48 Pixel breite Quadrate.
 	public static int hoehe_kg 	= 193;							//Hoehe: 192 + 1 Pixel Spielfeld. 4*48 Pixel lange Quadrate.
-	public static Font schrift;
+	
 	JFrame frame;												//Referenzvariable frame mit dem Typ JFrame. frame ist hier also das Fenster
 	
-	public void Fenster() throws FontFormatException, IOException {
+	public void Fenster() {
 		/* Die Methode Fenster erzeugt die GUI, damit beim Aufrufen der Klasse Gui nicht die komplette GUI erzeugt.
 		 * Das ist eine der wichtigsten Methoden, da hier das Spielfeld erstellt wird, indem es verschiedene Klassen aufruft.
 		 * Es werden die Grösse des Fensters festgelegt. Die Funktionen der einzelnen Methoden werden in den folgenden Zeilen direkt kommentiert.
@@ -48,7 +48,7 @@ public class Gui {
 		frame.addKeyListener(new Keyhandler());					//Der KeyListener wird dem Fenster hinzugefügt. Ein neues Objekt der Klasse Keyhandler wird erzeugt.
 		frame.setVisible(true);									//Das Fenster wird sichtbar gemacht.
 		
-		schrift = Font.createFont(Font.TRUETYPE_FONT, new File("rsc/font/FFFFORWA.TTF")).deriveFont(12f);
+		
 		
 		Menu me = new Menu();
 		setupDraw(me,0, 0, breite_dg+200, hoehe_dg);

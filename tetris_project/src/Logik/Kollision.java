@@ -1,6 +1,9 @@
 package Logik;
 
+import java.util.Iterator;
+
 import Grafik.Block;		//Wird für den import von Blöcken benötigt. Blöcke werde den Parametern der Methoden weitergegeben.
+import Steuerung.Datahandler;
 
 public class Kollision {
 	//Die Klasse Kollision besteht aus verschiedenen Methoden, die schauen, ob ein Block mit etwas kollidiert.
@@ -205,6 +208,51 @@ public class Kollision {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		verlieren();
+	}
+	public static void volleReihe(int kombo) {
+		int bloekeinreihe =0;
+		for(int y = Game.map[0].length-1; y >0; y-- ) {
+			for(int x = 0; x<Game.map.length; x++) {
+				if(Game.map[x][y]>0) {
+					bloekeinreihe ++;
+				}
+			}
+			if(bloekeinreihe ==10) {
+				Game.scoreToAdd += (10*kombo);
+				reiheweg(y, kombo);
+				break;
+			}else {
+				bloekeinreihe = 0;
+			}
+		}
+		
+		Game.score += Game.scoreToAdd;
+		Game.scoreToAdd = 0;
+		
+		if(Game.score > Game.highscore) {
+			Game.highscore= Game.score;
+			Datahandler.safe();
+		}
+	}
+	private static void reiheweg(int reihe, int kombo) {
+		for (int i = 0; i < Game.map.length; i++) {
+			Game.map[i][reihe] = 0;
+		}
+		for (int y = reihe; y >1; y--) {
+			for (int x = 0; x < Game.map.length; x++) {
+				Game.map[x][y]= Game.map[x][y-1];
+			}
+			
+		}	
+		volleReihe(kombo+1);
+	}
+	private static void verlieren() {
+		for(int i = 0; i<Game.map.length; i++) {
+			if (Game.map[i][0] > 0) {
+				Game.zustand = Zustand.verloren;
+			}
 		}
 	}
 }

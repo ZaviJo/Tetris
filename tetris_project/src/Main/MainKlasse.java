@@ -24,22 +24,25 @@ import Logik.Game;
  * von Tetris zu importieren. Das sind das Spielfeld, die bewegenden Blöcke und die Anzeige für den nächsten Block.
  * Logik.Game wird importiert, um auf die Instanzvariablen der Klasse zugreifen zu können.
  */
+import Steuerung.Datahandler;
 
 public class MainKlasse {
 
 	public static void main(String[] args) {
+		
+		Datahandler.load();
 		
 		Game.aktuellerBlock = new Block();		//Der Anfangsblock wird erstellt.
 		Game.blocks.add(Game.aktuellerBlock);	//aktuellerBlock wird der ArrayList der Klasse Game hinzugefügt.
 		Game.naechsterBlock = new Block();		//Der zweite Block wird erstellt.
 		
 		Gui g = new Gui();			//Ein Gui-Objekt wird erstellt, um die Methoden in der Klasse Gui aufrufen zu können.
-		try {
-			g.Fenster();
-		} catch (FontFormatException | IOException e) {
+		
+		g.Fenster();
+		
 			
-			e.printStackTrace();
-		}				//Die Methode Fenster wird aus der Klasse Gui im Package Grafik importiert.
+		
+		 				//Die Methode Fenster wird aus der Klasse Gui im Package Grafik importiert.
 		
 		startLoop();				//Die Methode startLoop() wird aufgerufen.
 		
