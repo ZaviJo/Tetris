@@ -1,10 +1,6 @@
 package Grafik;
 
 import java.awt.Color;		//Die Klasse Color wird benötigt, um den Hintergrund des Fenster einzufärben.
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.io.File;
-import java.io.IOException;
 
 import javax.swing.JFrame;  
 import javax.swing.JLabel;

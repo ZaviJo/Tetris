@@ -1,11 +1,11 @@
 package Grafik;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import javax.swing.JLabel;
+import java.awt.Color;		//Wird für die Farbauswahl des Spielfeldes und des Scores verwendet
+import java.awt.Graphics;	//Für die Erstellung eines Graphics-Objekt benötigt. 
+import javax.swing.JLabel;	// Das Package javax.swing wird aus dem Modul java.desktop importiert. JLabel wird verwendet, um auf dem Fenster Bilder darstellen zu können.
 
-import Logik.Game;
-import Logik.Umrechnen;
+import Logik.Game;			//Wird für die Instanzvariablen der Klasse importiert.
+import Logik.Umrechnen;		//Klasse wird verwendet um von Pixel zu Spielfeldkoordinaten hin- und her zu wechseln.
 
 public class Grid extends JLabel {
 	/*Die Klasse Grid zeichnet das grosse Spielfeld, bestehend aus 10*18 Feldern, und auch den Score und den Highscore. Die Klasse ist eine Subklasse

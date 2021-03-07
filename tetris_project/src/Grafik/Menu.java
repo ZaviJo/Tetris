@@ -1,12 +1,11 @@
 package Grafik;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.Color;		//Wird für die Farbauswahl des Spielfeldes und des Scores verwendet
+import java.awt.Graphics;	//Für die Erstellung eines Graphics-Objekt benötigt. 
+import javax.swing.JLabel;	// Das Package javax.swing wird aus dem Modul java.desktop importiert. JLabel wird verwendet, um auf dem Fenster Bilder darstellen zu können.
 
-import javax.swing.JLabel;
-
-import Logik.Game;
-import Logik.Zustand;
+import Logik.Game;			//Wird für die Instanzvariablen der Klasse importiert.
+import Logik.Zustand;		//Um auf den Zustand des Spiels zuzugreifen. 
 
 public class Menu extends JLabel {
 	/*Die Klasse Menu zeichnet die Querbalken über dem Spielfeld. Je nach Spielzustand (start, pause, verloren) wird ein anderes Menu angezeigt. Die Klasse ist eine Subklasse

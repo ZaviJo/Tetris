@@ -76,7 +76,22 @@ public class Block {
 		 *
 		 *Beispiel zu Grenzen:
 		 *Blocktyp J
-		 *1.Rotation (1. Dimension): 
+		 *0.Rotation: 	1 0 0
+		 *				1 1 1
+		 *				0 0 0
+		 *
+		 *1.Rotation:	0 1 1
+		 *				0 1 0
+		 *				0 1 0
+		 *
+		 *2.Rotation:	0 0 0
+		 *				1 1 1
+		 *				0 0 1
+		 *
+		 *3.Rotation:	0 1 0
+		 *				0 1 0
+		 *				1 1 0
+		 *
 		 */
 		int [][][] grenzen = null;
 		switch (typ) {

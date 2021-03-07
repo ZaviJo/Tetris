@@ -1,7 +1,7 @@
 package Logik;
 
-import Grafik.Block;		//Wird für den import von Blöcken benötigt. Blöcke werde den Parametern der Methoden weitergegeben.
-import Steuerung.Datahandler;
+import Grafik.Block;			//Wird für den import von Blöcken benötigt. Blöcke werde den Parametern der Methoden weitergegeben.
+import Steuerung.Datahandler;	//Wird verwendet, um den Highscore zu speichern. 
 
 public class Kollision {
 	/*Die Klasse Kollision besteht aus verschiedenen Methoden, die schauen, ob ein Block mit etwas kollidiert.
