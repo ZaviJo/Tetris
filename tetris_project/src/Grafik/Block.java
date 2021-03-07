@@ -73,6 +73,10 @@ public class Block {
 		 *aussieht. Die meisten Blöcke haben ein 3*3 Raster ausser der I-Block mit 4*4 und der O-Block mit 2*2. Wenn in
 		 *diesen Rastern eine 1 steht, ist ein Quadrant gefüllt. 
 		 *Die Methode gibt ein dreidimensionales Array mit Datentyp int für jeden erstellten Block aus.
+		 *
+		 *Beispiel zu Grenzen:
+		 *Blocktyp J
+		 *1.Rotation (1. Dimension): 
 		 */
 		int [][][] grenzen = null;
 		switch (typ) {
