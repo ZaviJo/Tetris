@@ -1,11 +1,11 @@
-/* Datum: 05.02.2021; Projektname: Programmierprojekt Neuimplementierung von Tetris;
+/* Datum: 14.03.2021; Projektname: Programmierprojekt Tetris;
  * Namen: Dani Tanner, Marius Hächler, Sebastian Gavrilas; 
  * Hauptquellen:	https://docs.oracle.com/en/java/javase/14/docs/api/index.html
  * 					https://stackoverflow.com/
- * Aufteilung: 	Alle: Gui, Grid, MainKlasse, Keyhandler
- * 				Dani: Blocktyp
- * 				Marius: Block
- * 				Sebastian: Block
+ * Aufteilung: 	Alle: Gui, Grid, MainKlasse, Keyhandler, Game, Kollision, Spielloop
+ * 				Dani: Blocktyp, Zustand, Menu
+ * 				Marius: Block, kleinesGrid, Datahandler
+ * 				Sebastian: Block, Umrechnen
  */
 
 /* Dies ist das Hauptpackage. Hier liegt die Mainklasse, in welcher die Mainmethode arbeitet. Sie ist für das gesamte 
@@ -14,9 +14,6 @@
  * Überblick hat. 
  */
 package Main;
-
-import java.awt.FontFormatException;
-import java.io.IOException;
 
 import Grafik.*;
 import Logik.Game; 

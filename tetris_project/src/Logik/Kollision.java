@@ -4,7 +4,11 @@ import Grafik.Block;		//Wird für den import von Blöcken benötigt. Blöcke werde d
 import Steuerung.Datahandler;
 
 public class Kollision {
-	//Die Klasse Kollision besteht aus verschiedenen Methoden, die schauen, ob ein Block mit etwas kollidiert.
+	/*Die Klasse Kollision besteht aus verschiedenen Methoden, die schauen, ob ein Block mit etwas kollidiert.
+	 *Zudem werden in dieser Klasse die wichtigen Methoden für das Spiel definiert:
+	 *blockdazu(), vollereihe(), reiheweg() und verlieren().
+	 *Funktionsweise werden bei den Methoden beschrieben. 
+	 */
 	public static boolean kollMitBlock(Block b, int direction) {
 		/*Diese Methode schaut, ob ein Block mit einem anderen stehenden Block kollidiert. Es wird der aktuelle Block und die Bewegungsrichtung mitgegeben.
 		 *Je nach Richtung geschieht etwas anderes. Blöcke können mit anderen Blöcken links (-1), rechts(1) oder unten(0) kollidieren.
@@ -220,10 +224,14 @@ public class Kollision {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			Game.zustand = Zustand.verloren; //Wenn ein Block oben ausserhalb des Spielfeld gesetzt wird, hat man verloren. 
 		}
-		verlieren();
+		verlieren();	//Nachdem der Block auf dem Spielfeld gespeichert wurde, wird geprüft, ob man am oberen Spielfeldrand angekommen ist. 
 	}
 	public static void volleReihe(int kombo) {
+		/*Der Methode volleReihe wird ein Integer Wert übergeben. 
+		 * 
+		 */
 		int bloekeinreihe =0;
 		for(int y = Game.map[0].length-1; y >0; y-- ) {
 			for(int x = 0; x<Game.map.length; x++) {
@@ -249,6 +257,7 @@ public class Kollision {
 		}
 	}
 	private static void reiheweg(int reihe, int kombo) {
+		//Der Methode werden 2 integer Werte übergeben. Es ist private, da die Methode nur in dieser Klasse verwendet wird.
 		for (int i = 0; i < Game.map.length; i++) {
 			Game.map[i][reihe] = 0;
 		}
@@ -261,6 +270,7 @@ public class Kollision {
 		volleReihe(kombo+1);
 	}
 	private static void verlieren() {
+		//Hier wird geschaut, ob man verloren hat. Man hat verloren, wenn die oberste Spielfeldzeile an irgendeiner Stelle gefüllt ist. 
 		for(int i = 0; i<Game.map.length; i++) {
 			if (Game.map[i][0] > 0) {
 				Game.zustand = Zustand.verloren;

@@ -28,7 +28,7 @@ public class Game {
 			}
 		}
 		score = 0;						//Score wird auf 0 gesetzt.
-		warten = 1000;
+		warten = 1000;					//Die Geschwindigkeit des Spiels wird zurückgesetzt.
 	}
 
 

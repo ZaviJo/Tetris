@@ -50,8 +50,8 @@ public class Gui {
 		
 		
 		
-		Menu me = new Menu();									//Referenzvariable der Klasse kleinesGrid.
-		setupDraw(me,0, 0, breite_dg, hoehe_dg);				//Methode setupDraw wird für das kleineGrid aufgerufen.
+		Menu me = new Menu();									//Referenzvariable der Klasse Menu.
+		setupDraw(me,0, 0, breite_dg, hoehe_dg);				//Methode setupDraw wird für das Menu aufgerufen.
 		KleinesGrid kg = new KleinesGrid();						//Referenzvariable der Klasse kleinesGrid. 
 		setupDraw(kg,breite_dg+48, 0, breite_kg, hoehe_kg);		//Methode setupDraw wird für das kleineGrid aufgerufen.
 		Grid dg = new Grid();									//Referenzvariable der Klasse Grid.
