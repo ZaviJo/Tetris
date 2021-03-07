@@ -14,6 +14,7 @@ public class Block {
 	
 	public Block() {
 		typ = Blocktyp.zufall();	//Es wird ein zufälliger Block ausgewählt.
+		
 		switch(typ) {
 		/*Switch Statements werden oft im Zusammenhang mit Enum-Klassen verwendet. Sie funktionieren ähnlich wie Verzweigungen,
 		 *es wird jedoch nur geprüft ob Werte gleich sind.

@@ -22,8 +22,8 @@ public class Game {
 	public static void zurücksetzen() {
 		/*Die Methode setzt die aktuelle Map zurück. Wird bei einem Spielneustart verwendet.
 		 */
-		for(int x =0; x < 10; x++) {    	//wenn nicht gehen bitte x<map.length anstatt 10
-			for (int y = 0; y< 18; y++) {	//gleich einf mit y<map[x].length
+		for(int x =0; x < 10; x++) {    	
+			for (int y = 0; y< 18; y++) {
 				map[x][y] =0;			//Diese Schleife setzt alle Felder im Array map wieder auf 0.
 			}
 		}

@@ -230,44 +230,53 @@ public class Kollision {
 	}
 	public static void volleReihe(int kombo) {
 		/*Der Methode volleReihe wird ein Integer Wert übergeben. 
-		 * 
+		 *Sie überprüft, ob eine Reihe voll ist. Das Spielfeld wird von unten nach oben durchgegangen. 
 		 */
-		int bloekeinreihe =0;
-		for(int y = Game.map[0].length-1; y >0; y-- ) {
-			for(int x = 0; x<Game.map.length; x++) {
+		int bloeckeinreihe =0;	//Eine Zählvariable
+		for(int y = 17; y>0; y-- ) {
+			//Das Spielfeld wird von oben nach unten durchlaufen. 
+			for(int x = 0; x<10; x++) {
 				if(Game.map[x][y]>0) {
-					bloekeinreihe ++;
+				//Für jeden Block in einer Reihe wird die Zählvariable um 1 erhöht. 
+					bloeckeinreihe ++;
 				}
 			}
-			if(bloekeinreihe ==10) {
+			if(bloeckeinreihe ==10) {
+				//Wenn eine Reihe voll ist, wird der Score um 10*kombo Punkte erhöht.
+				//Wenn gleichzeitig mehrere Reihen voll werden, gibt jede weitere Reihe 10 Punkte mehr. 
 				Game.scoreToAdd += (10*kombo);
-				reiheweg(y, kombo);
+				reiheweg(y, kombo);	//Die vollen Reihen werden mit der Methode reiheweg() entfernt. Der Punktemultiplikator kombo wird übergeben. 
 				break;
 			}else {
-				bloekeinreihe = 0;
+				//Wenn nicht, dann wird die Zählvariable zurückgesetzt. 
+				bloeckeinreihe = 0;
 			}
 		}
 		
-		Game.score += Game.scoreToAdd;
-		Game.scoreToAdd = 0;
+		Game.score += Game.scoreToAdd;	//Wenn nun alle Reihen gelöscht wurden, werden die gesammelten Punkte auf dem score gespeichert.
+		Game.scoreToAdd = 0;			//Wird wieder zurückgesetzt.
 		
 		if(Game.score > Game.highscore) {
+		//Wenn der jetzige Score den Highscore überbietet, wird es überschrieben.
 			Game.highscore= Game.score;
-			Datahandler.safe();
+			Datahandler.safe();				//Die Methode safe() der Klasse Datahandler wird aufgerufen. Sie speichert den Highscore permanent. 
 		}
 	}
 	private static void reiheweg(int reihe, int kombo) {
 		//Der Methode werden 2 integer Werte übergeben. Es ist private, da die Methode nur in dieser Klasse verwendet wird.
+		//Die Methode geht das Spielfeld wegen dem Verhältnis mit der Methode volleReihe() von unten nach oben durch. 
+		//Dies ist so, damit keine Reihen falsch überschrieben werden.
 		for (int i = 0; i < Game.map.length; i++) {
-			Game.map[i][reihe] = 0;
+			Game.map[i][reihe] = 0;		//Reihe wird zurückgesetzt. 
 		}
 		for (int y = reihe; y >1; y--) {
+			//Ab der aktuellen Reihe wird alles eins nach unten geschoben.
 			for (int x = 0; x < Game.map.length; x++) {
-				Game.map[x][y]= Game.map[x][y-1];
+				Game.map[x][y]= Game.map[x][y-1];	//y-Position eins nach unten. 
 			}
 			
 		}	
-		volleReihe(kombo+1);
+		volleReihe(kombo+1);	//Nun wird geschaut, ob weitere Reihen voll sind. Diese geben mehr Punkte; der Multiplikator wird erhöht.
 	}
 	private static void verlieren() {
 		//Hier wird geschaut, ob man verloren hat. Man hat verloren, wenn die oberste Spielfeldzeile an irgendeiner Stelle gefüllt ist. 

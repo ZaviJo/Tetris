@@ -8,7 +8,7 @@ import Logik.Game;
 import Logik.Umrechnen;
 
 public class Grid extends JLabel {
-	/*Die Klasse Grid zeichnet das grosse Spielfeld, bestehend aus 10*18 Feldern. Die Klasse ist eine Subklasse
+	/*Die Klasse Grid zeichnet das grosse Spielfeld, bestehend aus 10*18 Feldern, und auch den Score und den Highscore. Die Klasse ist eine Subklasse
 	 *der Klasse JLabel. Die Klasse JLabel ermöglicht es, Bilder und Texte auf einem Fenster darzustellen,
 	 *ohne dass der Benutzer etwas auf dem Bildschirm auswählen kann. Die Klassen Color und Graphics werden in der Methode paintComponent benutzt.
 	 */
@@ -81,8 +81,9 @@ public class Grid extends JLabel {
 				g.drawRect(i*48, j*48, 48, 48);			//Die Methode drawRect() zeichnet ein Rechteck mit einer Ecke an der Stelle (i*48/j*48). Ein Rechteck ist ein Quadrat mit Seitenlänge = 48.
 			}
 		}
-		g.drawString("SCORE: "+Game.score, Gui.breite_dg + 48, Gui.hoehe_kg + 48);
-		g.drawString("HIGHSCORE: "+Game.highscore,Gui.breite_dg + 48, Gui.hoehe_kg + 68);
+		
+		g.drawString("SCORE: "+Game.score, Gui.breite_dg + 48, Gui.hoehe_kg + 48);			//Der Score wird im Abstand von 48 Pixeln zum kleinenGrid und Grid gezeichnet.
+		g.drawString("HIGHSCORE: "+Game.highscore,Gui.breite_dg + 48, Gui.hoehe_kg + 68);	//Der Highscore ist 20 Pixel unter dem Score.
 		
 		repaint();										//repaint() aktualisiert das Spielfeld, damit es neugezeichnet wird.				
 	}

@@ -2,8 +2,8 @@ package Steuerung;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;		//Beide werden für das Interface KeyListener benötigt.
-import Logik.Game;						
-import Logik.Zustand;					//Braucht man für den Aufruf des aktuellen Blockes und des Zustands des Game.
+import Logik.Game;						//Wird für die Instanzvariablen der Klasse Game benötigt (aktuellerBlock, zustand, etc.)
+import Logik.Zustand;					//Braucht man für den Aufruf des Zustands des Game.
 import Logik.Kollision;					//Braucht man für die Kollisionserkennung.
 
 public class Keyhandler implements KeyListener{
@@ -43,7 +43,7 @@ public class Keyhandler implements KeyListener{
 			if(e.getKeyCode()== KeyEvent.VK_DOWN) {	//Wenn die untere Pfeiltaste gedrückt wird, beschleunigt sich das Spiel, womit der Block schneller wird.
 					Game.schneller = true;			//schneller wird nun auf true gesetzt.
 			}
-			if(e.getKeyCode()== KeyEvent.VK_LEFT) {	//Wenn man die linke Pfeiltaste drückt, geht der aktuelle Block ein Häuschen nach links.
+			if(e.getKeyCode()== KeyEvent.VK_LEFT) {	//Wenn man die linke Pfeiltaste drückt, geht der aktuelle Block ein Häuschen nach links, wenn es keine Kollision gibt.
 				try {
 				//Try-Catch um Spielabbrüche zu vermeiden.
 					if(!Kollision.kollMitWand(Game.aktuellerBlock, -1)&&!Kollision.kollMitBlock(Game.aktuellerBlock, -1)) {
