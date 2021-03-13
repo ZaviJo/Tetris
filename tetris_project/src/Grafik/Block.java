@@ -1,4 +1,8 @@
 package Grafik;
+/*Das Package Grafik beinhaltet die Klassen Block, Blocktypen, Grid, Gui, KleinesGrid und Menu. Alle Klassen haben mit der Darstellung
+ *des Spiels zu tun. Die meisten Klassen Erweitern die Klasse JLabel. Die Klasse JLabel ermöglicht es, Bilder und Texte auf einem Fenster darzustellen,
+ *ohne dass der Benutzer etwas auf dem Bildschirm auswählen kann.
+ */
 
 import java.awt.Color;				//Wird für die Farbauswahl eines Blockes verwendet
 

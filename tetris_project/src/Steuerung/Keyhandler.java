@@ -1,4 +1,8 @@
 package Steuerung;
+/*Das Package Steuerung beinhaltet die Klassen Datahandler und Keyhandler. In Keyhandler geht es um die Steuerung der wandernden Blöcke.
+ * Datahandler ist da, um einen Highscore speichern zu können. Sie greift auf eine Textdatei zu.
+ * 
+ */
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;		//Beide werden für das Interface KeyListener benötigt.

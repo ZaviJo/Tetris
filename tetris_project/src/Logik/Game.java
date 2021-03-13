@@ -1,10 +1,15 @@
 package Logik;
+/*Das Package Logik beinhaltet die Klassen Game, Kollision, Umrechnen und Zustand. Sie alle hängen eng mit der Klasse Block im Package Grafik zusammen.
+ *Die Klassen des Package Logik behandeln die Funktionen des Spiels. Sie definieren, wie sich die Blöcke (auch bei Kollision) verhalten und wie die Blöcke auf
+ *dem Spielfeld gespeichert werden.
+ * 
+ */
 
 import java.util.ArrayList;		//Wird für die Erstellung von ArrayLists benötigt. 
 import Grafik.Block; 			//Wird benötigt, um die vorbereiteten Blöcke zu verwenden. 
 
 public class Game {
-	/*Hier befinden sich die Grundvariablen für das Spiel.
+	/*Hier befinden sich die Grundvariablen für das Spiel und die Methode für das Zurücksetzen des Spiels.
 	 */
 	public static int score = 0;						//Statisch um es überall aufrufen zu können.
 	public static int highscore = 0;					//ebenso
