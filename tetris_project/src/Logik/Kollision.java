@@ -190,9 +190,7 @@ public class Kollision {
 		
 		try {
 		//Try-Catch um vor Fehler zu schützen.
-		/*In den folgenden Schleifen wird zu 
-		 * 
-		 */
+			//Es wird geschaut, ob der aktuelle Block mit Wänden in seiner Rotation kollidieren wird.
 				for (int i=0; i<b.getGrenzen()[rot].length; i++) {	
 					for (int j=0; j<b.getGrenzen()[rot][i].length; j++) {
 						if(b.getGrenzen()[rot][i][j]== 1) {
