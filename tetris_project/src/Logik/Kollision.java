@@ -131,9 +131,8 @@ public class Kollision {
 				for (int j=0; j<b.getGrenzen()[b.getRotation()][i].length; j++) {
 					if(b.getGrenzen()[b.getRotation()][i][j]==1) {
 					//In den vorigen Schleifen und Verzweigungen wird durchgegangen, wie der aktuelle Block aussieht.
-						if(b.getX()+(i+2) >= 11) { //i == 9????
+						if(b.getX()+(i+2) >= 11) {
 						//Es wird nun geprüft, ob der Block am rechten Rand angekommen ist.
-						//Es ist (i+2), ?????????
 							return true;
 						}	
 					}
